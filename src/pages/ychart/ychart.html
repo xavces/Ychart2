@@ -1,0 +1,91 @@
+
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Charts</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+
+  <div>
+    <div>
+      <div>
+      <canvas baseChart
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button ion-button color="secondary" (click)="randomize()">Modifier les valeurs Aléatoirement</button>
+  </div>
+
+  <div>
+    <button ion-button color="secondary" (click)="updateDataFromCSV()">Modifier les valeurs CSV</button>
+  </div>
+
+
+  
+  <ion-card>
+    <ion-card-header>
+      Bar Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Doughnut Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #doughnutCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Line Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Radar Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #radarCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Polar Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #polarCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <input type='file' name='userFile' id='file' />
+  
+
+
+
+</ion-content>
