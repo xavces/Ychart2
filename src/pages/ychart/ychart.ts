@@ -119,7 +119,7 @@ export class YchartPage {
               for (let i = 0; i < this.lineChartData.length; i++) {
                   _lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
                   for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-                    _lineChartData[i].data[j] = this.dataCSV[j][i];
+                    _lineChartData[i].data[j] = this.dataCSV[i][j];
                   }
                 }
 
